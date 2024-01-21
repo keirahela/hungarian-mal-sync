@@ -87,12 +87,6 @@ async function findAndUpdateAnimeInformation() {
               .innerHTML.toLowerCase()
               .trimStart()
               .trimEnd() ||
-          currAnime.alternative_titles.ja.toLowerCase() ==
-            document
-              .getElementById("name")
-              .innerHTML.toLowerCase()
-              .trimStart()
-              .trimEnd() ||
           currAnime.alternative_titles.synonyms.find(
             (namep) =>
               namep.toLowerCase() ==
