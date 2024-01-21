@@ -227,7 +227,7 @@ function validateToken(shouldPopupLogin = true) {
       access_token = data.access_token ? data.access_token : access_token;
       ref_token = data.refresh_token ? data.refresh_token : ref_token;
       if (
-        document.getElementById("name").innerHTML != "Nem támogatott oldal" &&
+        document.getElementById("name").innerHTML != "Nem támogatott oldal" ||
         document.getElementById("episode").innerHTML != ""
       ) {
         findAndUpdateAnimeInformation();
