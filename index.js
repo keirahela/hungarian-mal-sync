@@ -249,7 +249,6 @@ function removeTokens() {
   ref_token = null;
   chrome.storage.local.remove(["access_token", "refresh_token"]);
   document.getElementById("validation").innerHTML = "Bejelentkezés";
-  document.getElementById("clear").innerHTML = "Kijelentkezés";
 }
 
 function exchangeCodeForToken(code) {
