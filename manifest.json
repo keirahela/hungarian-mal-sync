@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "MAL-HSYNC",
+    "description": "MyAnimeList Sync for Hungarian anime streaming sites",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://www.animedrive.hu/watch/*",
+          "*://animedrive.hu/watch/*",
+          "*://magyaranime.eu/resz/*",
+          "*://www.magyaranime.eu/resz/*",
+          "*://uraharashop.hu/player/*",
+          "*://www.uraharashop.hu/player/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "permissions": [
+        "tabs",
+        "identity",
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions": [
+      "*://www.animedrive.hu/watch/*",
+      "*://animedrive.hu/watch/*",
+      "*://magyaranime.eu/resz/*",
+      "*://www.magyaranime.eu/resz/*",
+      "*://uraharashop.hu/player/*",
+      "*://www.uraharashop.hu/player/*"
+    ]
+  }
