@@ -18,6 +18,12 @@ Egy egyszerű MyAnimeList bővítmény, amely lehetővé teszi az emberek szám�
 - Kész!
 
 
+TÁMOGATOTT WEBOLDALAK LISTÁJA:
+
+- https://magyaranime.eu/
+- https://animedrive.hu/
+- https://uraharashop.hu/
+
 Ha akármelyik támogatott weboldalon megnyitod a bővítményt, az automatikusan frissíteni fogja az anime listádat. (5-10 mp)
 ## Fejlesztők
 
