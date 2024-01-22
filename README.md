@@ -41,9 +41,9 @@ https://streamable.com/3jj6k7
 
 | Anime             | Manga                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| ![animedrive.hu](https://animedrive.hu/) | - |
-| ![magyaranime.eu](https://magyaranime.eu/) | - |
-| ![uraharashop.hu](https://uraharashop.hu/) | - |
+| [animedrive.hu](https://animedrive.hu/) | - |
+| [magyaranime.eu](https://magyaranime.eu/) | - |
+| [uraharashop.hu](https://uraharashop.hu/) | - |
 
 ### Ha akármelyik támogatott weboldal lejátszóján megnyitod a bővítményt, az automatikusan frissíteni fogja az Anime Listádat.
 
