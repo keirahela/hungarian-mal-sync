@@ -43,4 +43,6 @@ https://streamable.com/3jj6k7
 | ![magyaranime.eu](https://magyaranime.eu/) | - |
 | ![uraharashop.hu](https://uraharashop.hu/) | - |
 
-Ha akármelyik támogatott weboldal lejátszóján megnyitod a bővítményt, az automatikusan frissíteni fogja az anime listádat.
+### Ha akármelyik támogatott weboldal lejátszóján megnyitod a bővítményt, az automatikusan frissíteni fogja az Anime Listádat.
+
+Open contribute project, ha bármiféle segítséged / kérésed van, nyiss egy issuet.
