@@ -15,6 +15,9 @@ var redirectUri = chrome.identity.getRedirectURL("provider_cb");
 var redirectRe = new RegExp(redirectUri + "[#?](.*)");
 var access_token = null;
 var ref_token = null;
+var options = {
+  notifications: true,
+};
 var clientId = "2abcb9ece86e2edcd8ee64ccdba9e18e";
 var code_challenge = makeid(128);
 
@@ -27,6 +30,8 @@ var sites = [
 window.addEventListener("selectstart", function (e) {
   e.preventDefault();
 });
+
+areNotifsEnabled();
 
 chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
   let currentSite = sites.find((site) => tabs[0].url.includes(site));
@@ -119,6 +124,14 @@ async function findAndUpdateAnimeInformation() {
 }
 
 function launchWebAuthFlow() {
+  const notifOptions = {
+    type: "basic",
+    iconUrl: "./icon.png",
+    title: "Popup.js",
+    message: "Hello from popup.js!",
+  };
+
+  chrome.notifications.create(notifOptions);
   document.getElementById("validation").innerHTML = "Bejelentkezés...";
   var options = {
     interactive: true,
@@ -208,6 +221,14 @@ function updateAnime(animeId) {
     if (this.status === 200) {
       var response = JSON.parse(this.responseText);
       console.log(response);
+      if (options.notifications) {
+        chrome.notifications.create({
+          type: "basic",
+          iconUrl: "./icon.png",
+          title: "MAL-HSYNC",
+          message: "Sikeres frissítés!",
+        });
+      }
     } else {
       console.log("update anime status:", this.status);
       return new Error("update anime failed");
@@ -217,6 +238,22 @@ function updateAnime(animeId) {
 }
 
 document.getElementById("validation").addEventListener("click", validateToken);
+
+document
+  .getElementById("notifications")
+  .addEventListener("change", function () {
+    options.notifications = this.checked;
+    chrome.storage.local.set({ notifications: this.checked });
+  });
+
+function areNotifsEnabled() {
+  chrome.storage.local.get(["notifications"], function (data) {
+    options.notifications =
+      data.notifications.toString() == "false" ? data.notifications : true;
+    document.getElementById("notifications").checked =
+      data.notifications.toString() == "false" ? data.notifications : true;
+  });
+}
 
 chrome.storage.local.get(["access_token", "refresh_token"], function (data) {
   if (data.access_token && data.refresh_token) {

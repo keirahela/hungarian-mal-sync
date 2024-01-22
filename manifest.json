@@ -24,7 +24,8 @@
         "tabs",
         "identity",
         "storage",
-        "activeTab"
+        "activeTab",
+        "notifications"
     ],
     "host_permissions": [
       "*://www.animedrive.hu/watch/*",
