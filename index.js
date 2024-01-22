@@ -235,7 +235,7 @@ function validateToken(shouldPopupLogin = true) {
       access_token = data.access_token ? data.access_token : access_token;
       ref_token = data.refresh_token ? data.refresh_token : ref_token;
       if (
-        document.getElementById("name").innerHTML != "Nem támogatott oldal" &&
+        document.getElementById("name").innerHTML != "Nem támogatott oldal" ||
         document.getElementById("episode").innerHTML != ""
       ) {
         findAndUpdateAnimeInformation();
@@ -257,7 +257,6 @@ function removeTokens() {
   ref_token = null;
   chrome.storage.local.remove(["access_token", "refresh_token"]);
   document.getElementById("validation").innerHTML = "Bejelentkezés";
-  document.getElementById("clear").innerHTML = "Kijelentkezés";
 }
 
 function exchangeCodeForToken(code) {
