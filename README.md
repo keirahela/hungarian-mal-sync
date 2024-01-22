@@ -17,15 +17,6 @@ Egy egyszerű MyAnimeList bővítmény, amely lehetővé teszi az emberek szám�
 - Nyomj a `Bejelentkezés` gombra, majd jelentkezz be a MyAnimeList fiókoddal.
 - Kész!
 
-
-TÁMOGATOTT WEBOLDALAK LISTÁJA:
-
-- https://magyaranime.eu/
-- https://animedrive.hu/
-- https://uraharashop.hu/
-
-Ha akármelyik támogatott weboldalon megnyitod a bővítményt, az automatikusan frissíteni fogja az anime listádat. (5-10 mp)
-
 ## Demo
 
 https://streamable.com/3jj6k7
@@ -43,3 +34,13 @@ https://streamable.com/3jj6k7
 - [@keirahela](https://github.com/keirahela)
 
 # A bővítményt meg kell nyitnod, hogy szinkronizálja!
+
+## Támogatott weboldalak listája
+
+| Anime             | Manga                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| ![animedrive.hu](https://animedrive.hu/) | - |
+| ![magyaranime.eu](https://magyaranime.eu/) | - |
+| ![uraharashop.hu](https://uraharashop.hu/) | - |
+
+Ha akármelyik támogatott weboldal lejátszóján megnyitod a bővítményt, az automatikusan frissíteni fogja az anime listádat.
