@@ -25,13 +25,21 @@ TÁMOGATOTT WEBOLDALAK LISTÁJA:
 - https://uraharashop.hu/
 
 Ha akármelyik támogatott weboldalon megnyitod a bővítményt, az automatikusan frissíteni fogja az anime listádat. (5-10 mp)
-## Fejlesztők
-
-- [@keirahela](https://github.com/keirahela)
-
 
 ## Demo
 
 https://streamable.com/3jj6k7
+
+## Roadmap
+
+- Loading bar implementation
+
+- Code optimization
+
+- More supported websites
+
+## Fejlesztők
+
+- [@keirahela](https://github.com/keirahela)
 
 # A bővítményt meg kell nyitnod, hogy szinkronizálja!
