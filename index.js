@@ -67,12 +67,20 @@ async function findAndUpdateAnimeInformation() {
       for (let i = 0; i < response.data.length; i++) {
         let currAnime = response.data[i].node;
         console.log(
-          currAnime.title.toLowerCase() ==
+          currAnime.title.toLowerCase() +
+            " : " +
             document
               .getElementById("name")
               .innerHTML.toLowerCase()
               .trimStart()
-              .trimEnd()
+              .trimEnd() +
+            " > " +
+            (currAnime.title.toLowerCase() ==
+              document
+                .getElementById("name")
+                .innerHTML.toLowerCase()
+                .trimStart()
+                .trimEnd())
         );
         if (
           currAnime.title.toLowerCase() ==
@@ -82,12 +90,6 @@ async function findAndUpdateAnimeInformation() {
               .trimStart()
               .trimEnd() ||
           currAnime.alternative_titles.en.toLowerCase() ==
-            document
-              .getElementById("name")
-              .innerHTML.toLowerCase()
-              .trimStart()
-              .trimEnd() ||
-          currAnime.alternative_titles.ja.toLowerCase() ==
             document
               .getElementById("name")
               .innerHTML.toLowerCase()
@@ -183,6 +185,7 @@ function setAccessToken(token, refresh_token) {
   chrome.storage.local.set(
     { access_token: access_token, refresh_token: ref_token },
     function () {
+      console.log(access_token);
       console.log("Token set");
       document.getElementById("validation").innerHTML = "Frissítés";
     }
@@ -193,7 +196,9 @@ function updateAnime(animeId) {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "PUT",
-    `https://cors-anywhere.herokuapp.com/https://api.myanimelist.net/v2/anime/${animeId}/my_list_status`
+    `https://cors-proxy-mal-0fbec838cc9c.herokuapp.com/api?url=https://api.myanimelist.net/v2/anime/${animeId}/my_list_status?num_watched_episodes=${Number(
+      document.getElementById("episode").innerHTML.split(".")[0]
+    )}`
   );
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -208,10 +213,7 @@ function updateAnime(animeId) {
       return new Error("update anime failed");
     }
   };
-  xhr.send(
-    "num_watched_episodes=" +
-      Number(document.getElementById("episode").innerHTML.split(".")[0])
-  );
+  xhr.send();
 }
 
 document.getElementById("validation").addEventListener("click", validateToken);
