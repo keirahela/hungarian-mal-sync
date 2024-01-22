@@ -25,6 +25,8 @@ https://streamable.com/3jj6k7
 
 - Loading bar implementation
 
+- Notification implementation
+
 - Code optimization
 
 - More supported websites
